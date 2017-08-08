@@ -37,3 +37,11 @@ it('Enzyme variant', () => {
 
     expect(alink.prop('className')).toEqual('normal')
 })
+
+it('Empty link', () => {
+    const component = shallow(
+        <Link>Undefined</Link>
+    );
+    const alink = component.find('a')
+    expect(alink.prop('href')).toEqual('#')
+})
